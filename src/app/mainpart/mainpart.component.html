@@ -1,0 +1,290 @@
+
+
+<div style="width:91%;margin:auto ;overflow: hidden;" class="containerrrr">
+    <!-- Hero section -->
+    <div class="hero-section">
+        <div class="banner">
+            <img [src]="Hero.image">
+        </div>
+        <div style="width: 90%;" class="three-part d-flex justify-content-evenly">
+            <div class=" d-flex justify-content-evenly catgory" *ngFor="let userH of Hero1">
+                <img [src]="userH.image">
+            </div>
+        </div>
+    </div>
+
+    <!-- second section --> 
+    <div  class="secondsection">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner" >
+              <div class="carousel-item active" data-bs-interval="4000" *ngFor="let userC of carousel">
+                <img [src]="userC.image" class="d-block w-100" >
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+              </div>
+            </div>
+           
+          </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="Categories">
+        <h4 class="heading">Shop By Categories</h4>
+        <div style="display: flex;flex-wrap: wrap;"  class="row  Categories-box d-flex justify-content-between" >
+
+            <div class="allCategories  "*ngFor="let user of users">
+               <div style="background-color: #e1f3fa;border-radius: 8px;"> <img  [src]="user.image"></div>
+                <h6 style="margin-top: 5PX;font-weight: 600;">{{user.categoryName}}</h6>
+            </div>
+        
+            
+        </div>
+    </div>
+
+    <!-- fruit-section -->
+    <div class="fruit-section">
+     <h4 class="heading">Fruits</h4>
+    <div  class="row productCard d-flex " >
+
+        
+        <div class="allproduct " *ngFor="let user2 of userss">
+            <div class="newarive">
+                <h5>{{user2.productTag}}</h5>
+            </div>
+            <div class="offPrice">
+                <h4 *ngFor="let prc1 of user2.pricelist">{{prc1.discount}}</h4>
+            </div>
+            <div  class="image"><img [src]="user2.image"></div>
+            <div class="details">
+                <h6 style="text-overflow: ellipsis !important;width: 100%; overflow: hidden;white-space: nowrap;">{{user2.productName}}</h6>
+                <div class="price">
+                    <select  class="product-price" >
+                        <option *ngFor="let prc of user2.pricelist">{{prc.unit.unitName}} - {{prc.afterDiscountPrice}}Rs. <i class="fa-solid fa-angle-down" style="color: #888888;float: right;"></i></option>
+                    </select>
+                </div>
+                <div class="last-line d-flex justify-content-between mt-2">
+                    <h6>₹{{ user2.price}}</h6>
+                    <button><i class="fa-solid fa-plus" style="color: #009dd1;"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- salad-banner -->
+    <div class="salad-banner mt-5" *ngFor="let userB of saladbanner">
+    <img  [src]="userB.image" alt="">
+    </div>
+
+    <!-- salad-section -->
+    <div class="Salad-section">
+         <h4 class="heading">Salad Bowls</h4>
+        <div class="row productCard d-flex ">
+            <div class="allproduct  " *ngFor="let user3 of saladd">
+                <div class="newarive">
+                    <h5>{{user3.productTag}}</h5>
+                </div>
+
+                <div  class="image"><img [src]="user3.image"></div>
+                <div class="details">
+                    <h6 >{{user3.productName}}</h6>
+                    <div class="price">
+                        <select  class="product-price" >
+                            <option *ngFor="let prc of user3.pricelist">{{prc.unit.unitName}} - {{prc.afterDiscountPrice}}Rs. <i class="fa-solid fa-angle-down" style="color: #888888;float: right;"></i></option>
+
+                        </select>
+                    </div>
+                    <div class="last-line d-flex justify-content-between mt-2">
+                        <h6>₹ 99</h6>
+                        <button><i class="fa-solid fa-plus" style="color: #009dd1;"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- world-food -->
+    <div class="Categories">
+        <h4 class="heading">
+            Gourmet & World Food</h4>
+            <div style="display: flex;flex-wrap: wrap;"  class="row  Categories-box d-flex justify-content-start" >
+
+                <div class="allCategories  "*ngFor="let user of users">
+                    <div style="background-color: #e1f3fa;border-radius: 8px;"> <img  [src]="user.image"></div>
+                    <h6 style="margin-top: 5PX;font-weight: 600;">{{user.categoryName}}</h6>
+                </div>
+            
+                
+            </div>
+
+         
+    </div>
+
+    <!-- Cheese -->
+    <div class="Cheese-section">
+         <h4 class="heading">Cheese</h4>
+        <div class="row productCard d-flex justify-content-start">
+            <div class="allproduct   " *ngFor="let user4 of Cheese">
+                <div class="newarive">
+                    <h5>{{user4.productTag}}</h5>
+                </div>
+
+                <div  class="image"><img [src]="user4.image"></div>
+                <div class="details">
+                    <h6>{{user4.productName}}</h6>
+                    <div class="price">
+                        <select  class="product-price" >
+                            <option *ngFor="let prc of user4.pricelist">{{prc.unit.unitName}} - {{prc.afterDiscountPrice}}Rs. <i class="fa-solid fa-angle-down" style="color: #888888;float: right;"></i></option>
+
+                        </select>
+                    </div>
+                    <div class="last-line d-flex justify-content-between mt-2">
+                        <h6>₹ 99</h6>
+                        <button><i class="fa-solid fa-plus" style="color: #009dd1;"></i></button>
+                    </div>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+
+    <!-- offer-banner -->
+    <div  class="salad-banner mt-5" *ngFor="let userO of offerbanner">
+    <img [src]="userO.image" alt="">
+    </div>
+   
+    <!-- Exotic Veggies -->
+    <div class="Exotic-section">
+         <h4 class="heading">Exotic Veggies</h4>
+        <div class="row productCard d-flex justify-content-start">
+            <div class="allproduct   " *ngFor="let user5 of EVeggies">
+                <div class="newarive">
+                    <h5>{{user5.productTag}}</h5>
+                </div>
+                <div  class="image"><img [src]="user5.image"></div>
+                <div class="details">
+                    <h6>{{user5.productName}}</h6>
+                    <div class="price">
+                        <select  class="product-price" >
+                            <option *ngFor="let prc of user5.pricelist">{{prc.unit.unitName}} - {{prc.afterDiscountPrice}}Rs. <i class="fa-solid fa-angle-down" style="color: #888888;float: right;"></i></option>
+
+                        </select>
+                    </div>
+                    <div class="last-line d-flex justify-content-between mt-2">
+                        <h6>₹ 99</h6>
+                        <button><i class="fa-solid fa-plus" style="color: #009dd1;"></i></button>
+                    </div>
+                </div>
+            </div>
+           
+           
+        </div>
+    </div>
+    
+    <!-- New At Slyce -->
+    <div class="Slyce-section">
+         <h4 class="heading">New At Slyce</h4>
+        <div class="row productCard d-flex justify-content-start">
+            <div class="allproduct   " *ngFor="let userN of NASlyce">
+                <div class="newarive">
+                    <h5>{{userN.productTag}}</h5>
+                </div>
+                <div style="background-color: #f5f5f5;" class="image"><img [src]="userN.image"></div>
+                <div class="details">
+                    <h6>{{userN.productName}}</h6>
+                    <div class="price">
+                        <select  class="product-price" >
+                            <option *ngFor="let prc of userN.pricelist">{{prc.unit.unitName}} - {{prc.afterDiscountPrice}}Rs. <i class="fa-solid fa-angle-down" style="color: #888888;float: right;"></i></option>
+
+                        </select>
+                    </div>
+                    <div class="last-line d-flex justify-content-between mt-2">
+                        <h6>₹ 99</h6>
+                        <button><i class="fa-solid fa-plus" style="color: #009dd1;"></i></button>
+                    </div>
+                </div>
+            </div>
+           
+         
+        </div>
+    </div>
+
+    <!-- Categories-2 -->
+    <div class="second-Categories mt-5 mb-5">
+        <div class="row d-flex justify-content-around"  >
+            <div class="col-6 offer-banner col-lg-3 col-md-6 col-sm-6 mt-4" *ngFor="let userC2 of Categories2"><img [src]="userC2.image"></div>
+            
+        </div>
+    </div>
+
+    <!-- add-banner -->
+    <div  class="salad-banner mt-5"  *ngFor="let userAB of Addbanner">
+        <img [src]="userAB.image">
+    </div>
+
+    <!-- Smoothies -->
+    <div class="Cheese-section">
+         <h4 class="heading">Smoothies</h4>
+        <div class="row productCard d-flex justify-content-start">
+            <div class="allproduct   " *ngFor="let user6 of Smoothies">
+                <div class="newarive">
+                    <h5>{{user6.productTag}}</h5>
+                </div>
+               
+                <div  class="image"><img [src]="user6.image"></div>
+                <div class="details">
+                    <h6>{{user6.productName}}</h6>
+                    <div class="price">
+                        <select  class="product-price" >
+                            <option *ngFor="let prc of user6.pricelist">{{prc.unit.unitName}} - {{prc.afterDiscountPrice}}Rs. <i class="fa-solid fa-angle-down" style="color: #888888;float: right;"></i></option>
+
+                        </select>
+                    </div>
+                    <div class="last-line d-flex justify-content-between mt-2">
+                        <h6>₹ 99</h6>
+                        <button><i class="fa-solid fa-plus" style="color: #009dd1;"></i></button>
+                    </div>
+                </div>
+            </div>
+           
+           
+        </div>
+    </div>
+
+    <!-- order-banner --> 
+    <div  class="salad-banner mt-5" *ngFor="let userOB of Orderbanner">
+        <img  [src]="userOB.image">
+    </div>
+
+</div>
+<div class="mobile-footer flex d-xl-none d-lg-none d-md-none" >
+    <div class="mobile-footer-item">
+        <i class="fa-solid fa-house"></i>
+        <a href=""><b class="text-dark">Home</b></a>
+    </div>
+    
+    <div class="mobile-footer-item">
+        <i class="fa-solid fa-shop"></i>
+        <a href=""><b class="text-dark">Orders</b></a>
+    </div>
+    
+    <div class="mobile-footer-item">
+        <i class="fa-regular fa-user"></i>
+        <a href=""><b class="text-dark">User</b></a>
+    </div>
+    
+    <div class="mobile-footer-item">
+        <i class="fa-solid fa-list"></i>
+        <a href=""><b class="text-dark">Categories</b></a>
+    </div>
+</div>
